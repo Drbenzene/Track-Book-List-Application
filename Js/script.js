@@ -20,7 +20,7 @@ function ready() {
 
   document.getElementById('submit').addEventListener("click", submitInfoFunc)
 
-  let removed = document.getElementsByClassName(' cancelC lass');
+  let removed = document.getElementsByClassName(' cancelClass');
   for (let i = 0; i < removed.length; i++) {
     const theRemItem = removed[i];
     theRemItem.addEventListener("click", removeItemFunc)
@@ -88,8 +88,7 @@ let addedToTable = (author, bookTitle, isbn) => {
     <td>${bookTitle}</td>
     <td>${author}</td>
     <td>${isbn}</td>
-    <td><p  class="cancelClass"  id="cancelIcon">X</p></td>
-    `
+    <td><img class="cancelClass"  id="cancelIcon" src="./Img/button.png" alt="Cancel Button" style="width:28%; height: auto;" /></td>    `
 
     tr.innerHTML = theBookInfo;
     tbody.appendChild(tr)
