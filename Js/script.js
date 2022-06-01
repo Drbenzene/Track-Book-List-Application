@@ -106,6 +106,7 @@ function darkModeActivated() {
   if (document.body.style.backgroundColor == "black") {
     document.body.style.backgroundColor = "white";
     document.body.style.color = "black"
+    document.getElementsByTagName("table")[0].classList.remove("table-dark")
   } else {
     document.body.style.backgroundColor = "black";
     document.body.style.color = "white";
