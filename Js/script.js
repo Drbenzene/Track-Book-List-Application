@@ -64,7 +64,7 @@ let addedToTable = (author, bookTitle, isbn) => {
   }
 
   if (spaceTesting.test(bookTitle) || spaceTesting.test(author) || spaceTesting.test(isbn)) {
-    showAlert("Ensure You provide a Valid Author Name and Book Title", 'warning');
+    showAlert("Invalid book details", 'warning');
     return
   }
   // } if (author.includes(patternTest) || bookTitle.includes(patternTest)) {
