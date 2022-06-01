@@ -47,7 +47,7 @@ function submitInfoFunc(e) {
 
 let addedToTable = (author, bookTitle, isbn) => {
 
-  let patternTest = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/gi;
+  let patternTest = /[`!@#$%^&*()_+\-=\[\]{};':"\\|<>\/?~]/gi;
   const tbody = document.getElementsByTagName("tbody")[0];
   const tr = document.createElement("tr");
 
@@ -57,6 +57,9 @@ let addedToTable = (author, bookTitle, isbn) => {
     return
   } if (isNaN(isbn)) {
     showAlert("Ensure the provided ISBN is a valid Number", 'warning')
+    return
+  } if(patternTest.test(bookTitle) || patternTest.test(author)) {
+    showAlert("Ensure You provide a Valid Author Name and Book Title", 'warning');
     return
   }
   // } if (author.includes(patternTest) || bookTitle.includes(patternTest)) {
