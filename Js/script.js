@@ -20,7 +20,7 @@ function ready() {
 
   document.getElementById('submit').addEventListener("click", submitInfoFunc)
 
-  let removed = document.getElementsByClassName(' cancelClass');
+  let removed = document.getElementsByClassName(' cancelC lass');
   for (let i = 0; i < removed.length; i++) {
     const theRemItem = removed[i];
     theRemItem.addEventListener("click", removeItemFunc)
@@ -45,7 +45,7 @@ function submitInfoFunc(e) {
 }
 
 let addedToTable = (author, bookTitle, isbn) => {
-
+  
   let patternTest = /[`!@#$%^&*()_+\-=\[\]{};':"\\|<>\/?~]/gi;
   const tbody = document.getElementsByTagName("tbody")[0];
   const tr = document.createElement("tr");
@@ -90,7 +90,9 @@ let addedToTable = (author, bookTitle, isbn) => {
       const theRemItem = removed[i];
       theRemItem.addEventListener("click", removeItemFunc)
     }
+
     document.theForm.reset();
+
   }
 
 }
