@@ -42,7 +42,6 @@ function submitInfoFunc(e) {
   let isbn = inputtedInfo.getElementsByClassName("inputDetails")[2].value
 
   addedToTable(author, bookTitle, isbn)
-  document.theForm.reset();
 }
 
 let addedToTable = (author, bookTitle, isbn) => {
@@ -91,7 +90,7 @@ let addedToTable = (author, bookTitle, isbn) => {
       const theRemItem = removed[i];
       theRemItem.addEventListener("click", removeItemFunc)
     }
-
+    document.theForm.reset();
   }
 
 }
