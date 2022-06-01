@@ -63,6 +63,11 @@ let addedToTable = (author, bookTitle, isbn) => {
     return
   }
 
+  if(!isNaN(author) || !isNaN(bookTitle || isNaN(isbn))) {
+    showAlert("The Book Title and Author Name must be text", 'warning');
+    return
+  }
+
   if (spaceTesting.test(bookTitle) || spaceTesting.test(author) || spaceTesting.test(isbn)) {
     showAlert("Invalid book details", 'warning');
     return
