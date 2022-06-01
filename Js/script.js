@@ -47,6 +47,7 @@ function submitInfoFunc(e) {
 
 let addedToTable = (author, bookTitle, isbn) => {
 
+  let patternTest = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/gi;
   const tbody = document.getElementsByTagName("tbody")[0];
   const tr = document.createElement("tr");
 
@@ -54,7 +55,17 @@ let addedToTable = (author, bookTitle, isbn) => {
     showAlert("Please provide all book details", 'warning')
     // setTimeout(() =>Swal.close(), 3000)  	
     return
-  } else {
+  } if (isNaN(isbn)) {
+    showAlert("Ensure the provided ISBN is a valid Number", 'warning')
+    return
+  }
+  // } if (author.includes(patternTest) || bookTitle.includes(patternTest)) {
+  //   showAlert("Ensure you provide valid Book Title and Author Name", 'warning');
+  //   return
+  // }
+  
+  
+  else {
 
 
     // checkValues(author, bookTitle, isbn)
@@ -78,8 +89,6 @@ let addedToTable = (author, bookTitle, isbn) => {
       theRemItem.addEventListener("click", removeItemFunc)
     }
 
-      // setTimeout(() =>Swal.close(), 2000) 
-
   }
 
 }
@@ -89,7 +98,6 @@ function removeItemFunc(e) {
   let itemRemoved = e.target
   console.log(itemRemoved.parentElement.parentElement.remove())
   showAlert("Book Removed", 'error')
-  // setTimeout(() =>Swal.close(), 3000)  	
 }
 
 function darkModeActivated() {
