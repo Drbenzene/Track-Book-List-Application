@@ -21,7 +21,7 @@
     <div class="container">
 
       <div class="dark-mode-container">
-        <button onclick="darkModeActivated()"><i class="fa-solid fa-moon"></i></button>
+        <button title="modeChangeButton" onclick="darkModeActivated()"><i class="fa-solid fa-moon"></i></button>
       </div>
 
       <div class="row header-row">
@@ -46,13 +46,13 @@
       <div class="row form-row">
         <form class="col form-group needs-validation" name="theForm">
           <label for="title" class="form-label">Title</label>
-          <input type="text" value="" id="title" class="inputDetails form-control" required>
+          <input placeholder="Enter the Book Title" type="text" value="" id="title" class="inputDetails form-control" required>
 
           <label for="title" class="form-label">Author</label>
-          <input type="text" value="" id="author" class="inputDetails form-control" required>
+          <input placeholder="e.g John Doe" type="text" value="" id="author" class="inputDetails form-control" required>
 
           <label for="title" class="form-label">ISBN</label>
-          <input type="text" value="" id="isbn" class="inputDetails form-control" required>
+          <input title=""  placeholder="Enter your ISBN" type="text" value="" id="isbn" class="inputDetails form-control" required>
 
           <button id="submit">Submit</button>
         </form>

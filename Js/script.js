@@ -88,7 +88,7 @@ let addedToTable = (author, bookTitle, isbn) => {
     <td>${bookTitle}</td>
     <td>${author}</td>
     <td>${isbn}</td>
-    <td><img class="cancelClass"  id="cancelIcon" src="./Img/button.png" alt="Cancel Button" style="width:28%; height: auto;" /></td>    `
+    <td><img class="cancelClass"  id="cancelIcon" src="./Img/button.png" alt="Cancel Button" style="width:auto; height: auto;" /></td>    `
 
     tr.innerHTML = theBookInfo;
     tbody.appendChild(tr)

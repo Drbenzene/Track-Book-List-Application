@@ -92,9 +92,10 @@ body {
   border-radius: 0.625rem;
   align-self: center;
   justify-self: center;
-  /* background-image: url(../Img/R.jpg); */
+  background-image: url(../Img/Polygon-0.2s-1536px.png);
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
 }
 
 .table-container {
