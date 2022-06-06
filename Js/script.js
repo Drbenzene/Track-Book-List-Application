@@ -16,7 +16,7 @@ function ready() {
     let theAuthor = e.target.value;
     console.log(theAuthor)
     return author
-  })
+  })  
 
   document.getElementById('submit').addEventListener("click", submitInfoFunc)
 
@@ -27,6 +27,14 @@ function ready() {
   }
 
 }
+
+function setStorage (key, value) {
+  return localStorage.setItem(key, value)
+}
+
+function getStorage(key) {
+  return localStorage.getItem(key)
+} 
 
 function submitInfoFunc(e) {
   e.preventDefault()
@@ -93,7 +101,7 @@ let addedToTable = (author, bookTitle, isbn) => {
     tr.innerHTML = theBookInfo;
     tbody.appendChild(tr)
     showAlert("Book Added Successfully", 'success')
-   	
+    
 
     let removed = document.getElementsByClassName('cancelClass');
     for (let i = 0; i < removed.length; i++) {
@@ -102,6 +110,8 @@ let addedToTable = (author, bookTitle, isbn) => {
     }
 
     document.theForm.reset();
+
+    setStorage ("bookDetails", theBookInfo)
 
   }
 
@@ -119,11 +129,18 @@ function darkModeActivated() {
     document.body.style.backgroundColor = "white";
     document.body.style.color = "black"
     document.getElementsByTagName("table")[0].classList.remove("table-dark")
+    localStorage.setItem('dark-mode', 'disabled')
+    return
   } else {
     document.body.style.backgroundColor = "black";
     document.body.style.color = "white";
     document.getElementsByTagName("table")[0].classList.add("table-dark")
+    
+    localStorage.setItem('dark-mode', 'enabled')
+    return
   }
+  localStorage.setItem('dark-mode', 'enabled')
+
 }
 
 //Displaying Messages
